@@ -28,7 +28,6 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.OnClick;
-import hotchemi.android.rate.AppRate;
 import timber.log.Timber;
 
 public class MainActivity extends AppBaseActivity implements MainMvpView {
@@ -80,7 +79,6 @@ public class MainActivity extends AppBaseActivity implements MainMvpView {
         });
 
         mMainPresenter.loadWeather("Bandung");
-        rateThisAppLogic();
     }
 
     @Override
@@ -218,17 +216,5 @@ public class MainActivity extends AppBaseActivity implements MainMvpView {
             return R.drawable.ic_cloudy;
         }
         return -1;
-    }
-
-    private void rateThisAppLogic() {
-        AppRate.with(this)
-                .setInstallDays(10)
-                .setLaunchTimes(10)
-                .setRemindInterval(2)
-                .setShowLaterButton(false)
-                .setDebug(false)
-                .monitor();
-
-        AppRate.showRateDialogIfMeetsConditions(this);
     }
 }
