@@ -11,8 +11,15 @@ Step 1. Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        compile 'com.github.derohimat:android-base-mvp:0.1'
+	        compile 'com.github.derohimat:android-base-mvp:0.3'
 	}
+
+### Requirements :
+	Min SDK Version 15
+	Target SDK Version 24
+	Build Tools Version 24.0.2
+	Java 1.8
+	
 
 ### Used Library from :
   - [Retrofit 2](http://square.github.io/retrofit/)
@@ -21,6 +28,7 @@ Step 2. Add the dependency
   - [Dagger 2](http://google.github.io/dagger/)
   - [Event Bus](https://nodejs.org/)
   - [XRecyclerView](https://github.com/jianghejie/XRecyclerView)
+  - [Butterknife 7](https://github.com/JakeWharton/butterknife)
 
 
 ### inspired by
