@@ -32,7 +32,7 @@ artifacts {
 }
 
 dependencies {
-    final SUPPORT_LIBRARY_VERSION = '24.2.0'
+    final SUPPORT_LIBRARY_VERSION = '24.2.1'
 
     compile fileTree(include: ['*.jar'], dir: 'libs')
 
