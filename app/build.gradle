@@ -9,7 +9,7 @@ android {
     buildToolsVersion "24.0.2"
 
     dexOptions {
-        incremental true
+//        incremental true
         javaMaxHeapSize "4g"
     }
 
