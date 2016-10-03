@@ -26,7 +26,7 @@ Step 2. Add the dependency
   - [OkHTTP 3](http://square.github.io/okhttp/)
   - [RXJava](https://github.com/ReactiveX/RxJava)
   - [Dagger 2](http://google.github.io/dagger/)
-  - [Event Bus](https://nodejs.org/)
+  - [Event Bus](https://github.com/greenrobot/EventBus)
   - [XRecyclerView](https://github.com/jianghejie/XRecyclerView)
   - [Butterknife 7](https://github.com/JakeWharton/butterknife)
 
