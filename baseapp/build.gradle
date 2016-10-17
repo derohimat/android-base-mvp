@@ -12,8 +12,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 3
-        versionName "0.3"
+        versionCode 4
+        versionName "0.4"
     }
 }
 
@@ -45,10 +45,6 @@ dependencies {
 
     //----- Nine Olds Animation
     compile 'com.nineoldandroids:library:2.4.0'
-
-    //----- The core of Reactive Programming
-    compile 'io.reactivex:rxjava:1.1.9'
-    compile 'io.reactivex:rxandroid:1.2.1'
 
     //----- Butterknife
     compile 'com.jakewharton:butterknife:7.0.1'
