@@ -8,16 +8,30 @@ Step 1. Add it in your root build.gradle at the end of repositories:
 			maven { url "https://jitpack.io" }
 		}
 	}
+
 Step 2. Add the dependency
 
 	dependencies {
 	        compile 'com.github.derohimat:android-base-mvp:0.4'
 	}
 
+Step 3. Add this library for version 0.4
+
+	//----- The core of Reactive Programming
+    compile 'io.reactivex:rxjava:1.1.9'
+    compile 'io.reactivex:rxandroid:1.2.1'
+
+Step 4. Modify applicationId "net.derohimat.samplebasemvp" to your package name
+
+Step 5. Profit
+
+Step 6. Star this repository :)
+
 ### Requirements :
 	Min SDK Version 15
 	Target SDK Version 24
-	Build Tools Version 24.0.2
+	Check the compileSdkVersion, and buildToolsVersion to be the latest
+	Build Tools Version 24.0.3
 	Java 1.8
 	
 
