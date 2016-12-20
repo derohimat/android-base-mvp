@@ -5,11 +5,10 @@ apply plugin: 'me.tatarka.retrolambda'
 apply from: '../config/quality.gradle'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.3"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
 
     dexOptions {
-//        incremental true
         javaMaxHeapSize "4g"
     }
 
@@ -25,9 +24,9 @@ android {
     defaultConfig {
         applicationId "net.derohimat.samplebasemvp"
         minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 3
-        versionName "0.3"
+        targetSdkVersion 25
+        versionCode 4
+        versionName "0.4"
     }
 
     buildTypes {
@@ -67,8 +66,8 @@ android {
 
 dependencies {
     final RETROFIT_VERSION = '2.1.0'
-    final OKHTTP_VERSION = '3.4.1'
-    final DAGGER_VERSION = '2.6.1'
+    final OKHTTP_VERSION = '3.5.0'
+    final DAGGER_VERSION = '2.8'
 
     compile project(':baseapp')
     compile fileTree(dir: 'libs', include: ['*.jar'])
