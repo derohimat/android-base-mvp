@@ -21,10 +21,14 @@ import timber.log.Timber;
 
 public class BaseApplication extends Application {
 
-    private Scheduler mScheduler;
-    private ApplicationComponent mApplicationComponent;
     @Inject
     EventBus mEventBus;
+    private Scheduler mScheduler;
+    private ApplicationComponent mApplicationComponent;
+
+    public static BaseApplication get(Context context) {
+        return (BaseApplication) context.getApplicationContext();
+    }
 
     @Override
     public void onCreate() {
@@ -40,10 +44,6 @@ public class BaseApplication extends Application {
 
         mApplicationComponent.inject(this);
         mEventBus.register(this);
-    }
-
-    public static BaseApplication get(Context context) {
-        return (BaseApplication) context.getApplicationContext();
     }
 
     public ApplicationComponent getApplicationComponent() {

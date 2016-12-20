@@ -22,18 +22,20 @@ import timber.log.Timber;
 public class MainPresenter implements BasePresenter<MainMvpView> {
 
     @Inject
+    APIService mAPIService;
+    @Inject
+    EventBus mEventBus;
+    private MainMvpView mMainMvpView;
+    private Subscription mSubscription;
+    private WeatherPojo mWeatherPojo;
+    @Inject
     public MainPresenter(Context context) {
         ((BaseApplication) context.getApplicationContext()).getApplicationComponent().inject(this);
     }
 
-    @Inject
-    APIService mAPIService;
-    @Inject
-    EventBus mEventBus;
-
-    private MainMvpView mMainMvpView;
-    private Subscription mSubscription;
-    private WeatherPojo mWeatherPojo;
+    private static boolean isHttp404(Throwable error) {
+        return error instanceof HttpException && ((HttpException) error).code() == 404;
+    }
 
     @Override
     public void attachView(MainMvpView view) {
@@ -85,9 +87,5 @@ public class MainPresenter implements BasePresenter<MainMvpView> {
                         mWeatherPojo = weatherPojo;
                     }
                 });
-    }
-
-    private static boolean isHttp404(Throwable error) {
-        return error instanceof HttpException && ((HttpException) error).code() == 404;
     }
 }

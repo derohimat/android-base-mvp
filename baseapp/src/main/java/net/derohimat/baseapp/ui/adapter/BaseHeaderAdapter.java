@@ -4,11 +4,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.derohimat.baseapp.ui.adapter.viewholder.BaseHeaderViewHolder;
 import net.derohimat.baseapp.ui.adapter.viewholder.BaseItemViewHolder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created on : 05-03-2016

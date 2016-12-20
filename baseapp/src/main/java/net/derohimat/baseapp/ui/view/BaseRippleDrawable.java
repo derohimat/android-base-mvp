@@ -16,6 +16,11 @@ import com.nineoldandroids.util.Property;
 
 public class BaseRippleDrawable extends Drawable implements View.OnTouchListener {
 
+    final static int DEFAULT_ANIM_DURATION = 250;
+    final static float END_RIPPLE_TOUCH_RADIUS = 150f;
+    final static float END_SCALE = 1.3f;
+    final static int RIPPLE_TOUCH_MIN_ALPHA = 40;
+    final static int RIPPLE_TOUCH_MAX_ALPHA = 120;
     final static Property<BaseRippleDrawable, Float> CREATE_TOUCH_RIPPLE =
             new FloatProperty<BaseRippleDrawable>("createTouchRipple") {
                 @Override
@@ -28,7 +33,7 @@ public class BaseRippleDrawable extends Drawable implements View.OnTouchListener
                     return object.getAnimationState();
                 }
             };
-
+    final static int RIPPLE_BACKGROUND_ALPHA = 100;
     final static Property<BaseRippleDrawable, Float> DESTROY_TOUCH_RIPPLE =
             new FloatProperty<BaseRippleDrawable>("destroyTouchRipple") {
                 @Override
@@ -41,15 +46,6 @@ public class BaseRippleDrawable extends Drawable implements View.OnTouchListener
                     return object.getAnimationState();
                 }
             };
-
-    final static int DEFAULT_ANIM_DURATION = 250;
-    final static float END_RIPPLE_TOUCH_RADIUS = 150f;
-    final static float END_SCALE = 1.3f;
-
-    final static int RIPPLE_TOUCH_MIN_ALPHA = 40;
-    final static int RIPPLE_TOUCH_MAX_ALPHA = 120;
-    final static int RIPPLE_BACKGROUND_ALPHA = 100;
-
     Paint mRipplePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     Paint mRippleBackgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
@@ -59,6 +55,8 @@ public class BaseRippleDrawable extends Drawable implements View.OnTouchListener
     ObjectAnimator mCurrentAnimator;
 
     Drawable mOriginalBackground;
+    int mViewSize = 0;
+    float mAnimationValue;
 
     public BaseRippleDrawable() {
         initRippleElements();
@@ -181,8 +179,6 @@ public class BaseRippleDrawable extends Drawable implements View.OnTouchListener
         return false;
     }
 
-    int mViewSize = 0;
-
     void onFingerDown(View v, float x, float y) {
         mTouchRipple.cx = mBackgroundRipple.cx = x;
         mTouchRipple.cy = mBackgroundRipple.cy = y;
@@ -201,7 +197,6 @@ public class BaseRippleDrawable extends Drawable implements View.OnTouchListener
         }
     }
 
-
     void createTouchRipple(float value) {
         mAnimationValue = value;
 
@@ -215,8 +210,6 @@ public class BaseRippleDrawable extends Drawable implements View.OnTouchListener
 
         invalidateSelf();
     }
-
-    float mAnimationValue;
 
     void destroyTouchRipple(float value) {
         mAnimationValue = value;

@@ -68,16 +68,8 @@ public abstract class BaseRecyclerAdapter<Data, Holder extends BaseItemViewHolde
         return position;
     }
 
-    public interface OnItemClickListener {
-        void onItemClick(View view, int position);
-    }
-
     public void setOnItemClickListener(OnItemClickListener itemClickListener) {
         this.mItemClickListener = itemClickListener;
-    }
-
-    public interface OnLongItemClickListener {
-        void onLongItemClick(View view, int position);
     }
 
     public void setOnLongItemClickListener(OnLongItemClickListener longItemClickListener) {
@@ -149,5 +141,13 @@ public abstract class BaseRecyclerAdapter<Data, Holder extends BaseItemViewHolde
     public void clear() {
         mDatas.clear();
         notifyDataSetChanged();
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
+    public interface OnLongItemClickListener {
+        void onLongItemClick(View view, int position);
     }
 }

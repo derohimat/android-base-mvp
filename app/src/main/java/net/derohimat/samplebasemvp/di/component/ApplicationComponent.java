@@ -5,8 +5,8 @@ import net.derohimat.samplebasemvp.data.local.PreferencesHelper;
 import net.derohimat.samplebasemvp.data.remote.APIService;
 import net.derohimat.samplebasemvp.data.remote.UnauthorisedInterceptor;
 import net.derohimat.samplebasemvp.di.module.ApplicationModule;
-import net.derohimat.samplebasemvp.view.fragment.detail.DetailPresenter;
 import net.derohimat.samplebasemvp.view.activity.main.MainPresenter;
+import net.derohimat.samplebasemvp.view.fragment.detail.DetailPresenter;
 
 import org.greenrobot.eventbus.EventBus;
 

@@ -3,11 +3,10 @@ package net.derohimat.samplebasemvp.view;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
+import net.derohimat.baseapp.ui.BaseActivity;
 import net.derohimat.samplebasemvp.BaseApplication;
 import net.derohimat.samplebasemvp.di.component.ActivityComponent;
 import net.derohimat.samplebasemvp.di.component.DaggerActivityComponent;
-
-import net.derohimat.baseapp.ui.BaseActivity;
 
 import butterknife.ButterKnife;
 import timber.log.Timber;

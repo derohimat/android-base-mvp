@@ -7,10 +7,9 @@ import net.derohimat.baseapp.util.BasePreferenceUtils;
 
 public class PreferencesHelper extends BasePreferenceUtils {
 
-    private static SharedPreferences mPref;
-
     private static final String KEY_USER_ID = "user_id";
     private static final String KEY_NOTIFICATIONS_PREFERENCES = "notifications_preferences";
+    private static SharedPreferences mPref;
 
     public PreferencesHelper(Context context) {
         mPref = getSharedPreference(context);

@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-
 import net.derohimat.baseapp.ui.BaseActivity;
 
 import butterknife.ButterKnife;
@@ -62,12 +61,12 @@ public abstract class BaseFragment<Data extends Parcelable> extends Fragment {
         onViewReady(savedInstanceState);
     }
 
-    public void setData(Data data) {
-        this.mData = data;
-    }
-
     public Data getData() {
         return mData;
+    }
+
+    public void setData(Data data) {
+        this.mData = data;
     }
 
     protected abstract int getResourceLayout();
@@ -100,11 +99,11 @@ public abstract class BaseFragment<Data extends Parcelable> extends Fragment {
         return ((BaseActivity) getActivity()).getSupportActionBar();
     }
 
-    protected Activity getBaseActivity() {
-        return getActivity();
-    }
-
     protected void setSupportActionBar(Toolbar toolbar) {
         ((BaseActivity) getActivity()).setSupportActionBar(toolbar);
+    }
+
+    protected Activity getBaseActivity() {
+        return getActivity();
     }
 }

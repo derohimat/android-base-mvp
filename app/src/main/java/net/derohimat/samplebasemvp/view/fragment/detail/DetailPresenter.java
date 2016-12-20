@@ -2,11 +2,10 @@ package net.derohimat.samplebasemvp.view.fragment.detail;
 
 import android.content.Context;
 
+import net.derohimat.baseapp.presenter.BasePresenter;
 import net.derohimat.samplebasemvp.BaseApplication;
 import net.derohimat.samplebasemvp.data.remote.APIService;
 import net.derohimat.samplebasemvp.model.forecast.Forecast;
-
-import net.derohimat.baseapp.presenter.BasePresenter;
 
 import javax.inject.Inject;
 
@@ -17,6 +16,8 @@ import timber.log.Timber;
 
 public class DetailPresenter implements BasePresenter<DetailMvpView> {
 
+    @Inject
+    APIService mAPIService;
     private DetailMvpView mDetailMvpView;
     private Subscription mSubscription;
     private Forecast mForecast;
@@ -25,9 +26,6 @@ public class DetailPresenter implements BasePresenter<DetailMvpView> {
     public DetailPresenter(Context context) {
         ((BaseApplication) context.getApplicationContext()).getApplicationComponent().inject(this);
     }
-
-    @Inject
-    APIService mAPIService;
 
     @Override
     public void attachView(DetailMvpView view) {

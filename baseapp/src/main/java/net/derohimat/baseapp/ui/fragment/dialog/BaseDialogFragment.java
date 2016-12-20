@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
-
 import net.derohimat.baseapp.ui.BaseActivity;
 
 import butterknife.ButterKnife;

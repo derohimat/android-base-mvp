@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-
 import butterknife.ButterKnife;
 import timber.log.Timber;
 

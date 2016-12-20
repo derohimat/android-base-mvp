@@ -34,13 +34,6 @@ public class BaseImageView extends ImageView {
         super(context, attrs, defStyleAttr);
     }
 
-    public void setImageUrl(String url) {
-        mImageUrl = url;
-        Glide.with(getContext())
-                .load(url)
-                .into(this);
-    }
-
     public void setImageUrl(String url, int errorResourceId) {
         mImageUrl = url;
         Glide.with(getContext())
@@ -134,5 +127,12 @@ public class BaseImageView extends ImageView {
 
     public String getImageUrl() {
         return mImageUrl;
+    }
+
+    public void setImageUrl(String url) {
+        mImageUrl = url;
+        Glide.with(getContext())
+                .load(url)
+                .into(this);
     }
 }
