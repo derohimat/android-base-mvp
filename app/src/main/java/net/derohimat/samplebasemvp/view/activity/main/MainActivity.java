@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import net.derohimat.samplebasemvp.R;
 import net.derohimat.samplebasemvp.events.MessagesEvent;
-import net.derohimat.samplebasemvp.model.weather.WeatherPojo;
+import net.derohimat.samplebasemvp.data.remote.model.weather.WeatherPojo;
 import net.derohimat.samplebasemvp.util.DialogFactory;
 import net.derohimat.samplebasemvp.util.UnitLocale;
 import net.derohimat.samplebasemvp.view.AppBaseActivity;

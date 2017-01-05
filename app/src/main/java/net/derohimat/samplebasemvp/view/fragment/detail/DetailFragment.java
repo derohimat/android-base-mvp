@@ -12,8 +12,8 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import net.derohimat.baseapp.ui.fragment.BaseFragment;
 import net.derohimat.baseapp.ui.view.BaseRecyclerView;
 import net.derohimat.samplebasemvp.R;
-import net.derohimat.samplebasemvp.model.forecast.Forecast;
-import net.derohimat.samplebasemvp.model.forecast.List;
+import net.derohimat.samplebasemvp.data.remote.model.forecast.Forecast;
+import net.derohimat.samplebasemvp.data.remote.model.forecast.List;
 import net.derohimat.samplebasemvp.util.DialogFactory;
 
 import butterknife.Bind;

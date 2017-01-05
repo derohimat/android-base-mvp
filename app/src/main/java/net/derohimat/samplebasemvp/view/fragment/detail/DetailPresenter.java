@@ -5,7 +5,7 @@ import android.content.Context;
 import net.derohimat.baseapp.presenter.BasePresenter;
 import net.derohimat.samplebasemvp.BaseApplication;
 import net.derohimat.samplebasemvp.data.remote.APIService;
-import net.derohimat.samplebasemvp.model.forecast.Forecast;
+import net.derohimat.samplebasemvp.data.remote.model.forecast.Forecast;
 
 import javax.inject.Inject;
 

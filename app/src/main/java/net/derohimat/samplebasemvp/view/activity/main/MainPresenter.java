@@ -7,7 +7,7 @@ import net.derohimat.samplebasemvp.BaseApplication;
 import net.derohimat.samplebasemvp.R;
 import net.derohimat.samplebasemvp.data.remote.APIService;
 import net.derohimat.samplebasemvp.events.MessagesEvent;
-import net.derohimat.samplebasemvp.model.weather.WeatherPojo;
+import net.derohimat.samplebasemvp.data.remote.model.weather.WeatherPojo;
 
 import org.greenrobot.eventbus.EventBus;
 
