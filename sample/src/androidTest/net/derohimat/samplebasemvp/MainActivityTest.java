@@ -1,8 +1,10 @@
+package net.derohimat.samplebasemvp;
+
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
 
-    private static final String CITY_NAME = "Sofia,bg";
+    private static final String CITY_NAME = "Bandung";
 
     @Rule
     public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<>(MainActivity.class);
@@ -19,7 +21,7 @@ public class MainActivityTest {
     public void correctWeatherDataDisplayed() {
         WeatherPojo weatherData = apiService.getWeatherForCity(CITY_NAME, "metric").toBlocking().first();
         //onView(withId(R.id.button_get_weather)).perform(click());
-        onView(withId(R.id.textview_main_city)).check(matches(withText(containsString("Sofia"))));
+        onView(withId(R.id.textview_main_city)).check(matches(withText(containsString("Bandung"))));
     }
 
     @Test
