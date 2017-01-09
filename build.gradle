@@ -24,10 +24,6 @@ allprojects {
     }
 }
 
-task aar() << {
-    dependsOn 'assembleRelease'
-}
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
