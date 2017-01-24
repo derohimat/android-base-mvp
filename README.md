@@ -2,6 +2,18 @@
 
 # Android Base MVP Concept
 
+# Architecture
+<img src="https://github.com/derohimat/android-base-mvp/blob/master/architecture_diagram.png">
+
+### Requirements :
+	Min SDK Version 15
+	Target SDK Version 24
+	Check the compileSdkVersion, and buildToolsVersion to be the latest
+	Build Tools Version 24.0.3
+	Java 1.8
+
+### Step by step
+
 Step 1. Add it in your root build.gradle at the end of repositories:
 
 	allprojects {
@@ -23,19 +35,12 @@ Step 3. Add this library for version 0.4
     compile 'io.reactivex:rxjava:1.1.9'
     compile 'io.reactivex:rxandroid:1.2.1'
 
-Step 4. Modify applicationId "net.derohimat.samplebasemvp" to your package name
+Step 4. Modify applicationId "**net.derohimat.samplebasemvp**" to your package name
 
 Step 5. Profit
 
 Step 6. Star this repository :)
 
-### Requirements :
-	Min SDK Version 15
-	Target SDK Version 24
-	Check the compileSdkVersion, and buildToolsVersion to be the latest
-	Build Tools Version 24.0.3
-	Java 1.8
-	
 ## How to implement a new screen following MVP
 
 Imagine you have to implement a sign in screen.
@@ -49,9 +54,7 @@ Imagine you have to implement a sign in screen.
 7. Make your **```ActivitySignIn implement SignInView```** and implement the required methods like **```showSignInSuccessful()```**
 8. In your activity, inject a new instance of **```SignInPresenter```** and call **```presenter.attachView(this)```** from onCreate and **```presenter.detachView()```** from **```onDestroy()```**. Also, set up a click listener in your button that calls **```presenter.signIn(email)```**.
 
-
-
-### Used Library from :
+### Library :
   - [Retrofit 2](http://square.github.io/retrofit/)
   - [OkHTTP 3](http://square.github.io/okhttp/)
   - [RXJava](https://github.com/ReactiveX/RxJava)
@@ -61,7 +64,7 @@ Imagine you have to implement a sign in screen.
   - [Butterknife 7](https://github.com/JakeWharton/butterknife)
 
 
-### inspired by
+### Inspired by
 
 https://github.com/AndreiD/UltimateAndroidTemplateRx
 
