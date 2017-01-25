@@ -2,14 +2,14 @@
 
 # Android Base MVP Concept
 
-# Architecture
+### Architecture
 <img src="https://github.com/derohimat/android-base-mvp/blob/master/architecture_diagram.png">
 
 ### Requirements :
 	Min SDK Version 15
-	Target SDK Version 24
+	Target SDK Version 25
 	Check the compileSdkVersion, and buildToolsVersion to be the latest
-	Build Tools Version 24.0.3
+	Build Tools Version 25.0.2
 	Java 1.8
 
 ### Step by step
@@ -26,20 +26,22 @@ Step 1. Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        compile 'com.github.derohimat:android-base-mvp:0.4'
+	        compile 'com.github.derohimat:android-base-mvp:1.0'
 	}
 
-Step 3. Add this library for version 0.4
+Step 3. Add this library for version **0.4 and up**
 
 	//----- The core of Reactive Programming
-    compile 'io.reactivex:rxjava:1.1.9'
+    compile 'io.reactivex:rxjava:1.2.5'
     compile 'io.reactivex:rxandroid:1.2.1'
 
-Step 4. Modify applicationId "**net.derohimat.samplebasemvp**" to your package name
+Step 4. Change **```extends MvpView```** to **```extends BaseView```**
 
-Step 5. Profit
+Step 5. Modify applicationId "**net.derohimat.samplebasemvp**" to your package name
 
-Step 6. Star this repository :)
+Step 6. Profit
+
+Step 7. Star this repository :)
 
 ## How to implement a new screen following MVP
 
@@ -47,7 +49,7 @@ Imagine you have to implement a sign in screen.
 
 1. Create a new package under ui called signin
 2. Create an new Activity called **```ActivitySignIn```**. You could also use a Fragment.
-3. Define the view interface that your Activity is going to implement. Create a new interface called **```SignInView```** that extends **```MvpView```**. Add the methods that you think will be necessary, e.g. **```showSignInSuccessful()```**
+3. Define the view interface that your Activity is going to implement. Create a new interface called **```SignInView```** that extends **```BaseView```**. Add the methods that you think will be necessary, e.g. **```showSignInSuccessful()```**
 4. Create a **```SignInPresenter```** class that extends **```BasePresenter<SignInView>```**
 5. Implement the methods in **```SignInPresenter```** that your Activity requires to perform the necessary actions, e.g. **```signIn(String email)```**. Once the sign in action finishes you should call **```getView().showSignInSuccessful()```**.
 6. Create a **```SignInPresenterTest```** and write unit tests for **```signIn(email)```**. Remember to mock the **```SignInView```** and also the DataManager.
