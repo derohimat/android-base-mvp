@@ -16,13 +16,13 @@ import net.derohimat.samplebasemvp.data.remote.model.forecast.Forecast;
 import net.derohimat.samplebasemvp.data.remote.model.forecast.List;
 import net.derohimat.samplebasemvp.util.DialogFactory;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class DetailFragment extends BaseFragment implements DetailView {
 
     private static final String ARG_EXAMPLE = "ARG_EXAMPLE";
 
-    @Bind(R.id.recyclerview_details)
+    @BindView(R.id.recyclerview_details)
     BaseRecyclerView mRecyclerView;
 
     private DetailPresenter mPresenter;

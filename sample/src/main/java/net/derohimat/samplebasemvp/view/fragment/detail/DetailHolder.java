@@ -12,7 +12,7 @@ import net.derohimat.samplebasemvp.R;
 import net.derohimat.samplebasemvp.data.remote.model.forecast.List;
 import net.derohimat.samplebasemvp.view.activity.main.MainActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 
 /**
@@ -20,13 +20,13 @@ import butterknife.Bind;
  */
 public class DetailHolder extends BaseItemViewHolder<List> {
 
-    @Bind(R.id.row_textView_forecast)
+    @BindView(R.id.row_textView_forecast)
     TextView row_textView_forecast;
 
-    @Bind(R.id.row_imageView_forecast)
+    @BindView(R.id.row_imageView_forecast)
     BaseImageView row_imageView_forecast;
 
-    @Bind(R.id.row_details_cardview)
+    @BindView(R.id.row_details_cardview)
     CardView row_details_cardview;
 
     public DetailHolder(Context context, View itemView, BaseRecyclerAdapter.OnItemClickListener itemClickListener,

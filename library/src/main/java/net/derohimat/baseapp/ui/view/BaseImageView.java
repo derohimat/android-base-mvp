@@ -2,14 +2,10 @@ package net.derohimat.baseapp.ui.view;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.Target;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created on : 05-03-2016
@@ -19,7 +15,7 @@ import com.bumptech.glide.request.target.Target;
  * GitHub     : https://github.com/derohimat
  * LinkedIn   : https://www.linkedin.com/in/derohimat
  */
-public class BaseImageView extends ImageView {
+public class BaseImageView extends AppCompatImageView {
     private String mImageUrl;
 
     public BaseImageView(Context context) {
@@ -36,7 +32,7 @@ public class BaseImageView extends ImageView {
 
     public void setImageUrl(String url, int errorResourceId) {
         mImageUrl = url;
-        Glide.with(getContext())
+        Picasso.get()
                 .load(url)
                 .error(errorResourceId)
                 .into(this);
@@ -44,7 +40,7 @@ public class BaseImageView extends ImageView {
 
     public void setImageUrl(String url, int placeHolderResourceId, int errorResourceId) {
         mImageUrl = url;
-        Glide.with(getContext())
+        Picasso.get()
                 .load(url)
                 .placeholder(placeHolderResourceId)
                 .error(errorResourceId)
@@ -53,74 +49,9 @@ public class BaseImageView extends ImageView {
 
     public void setImageUrl(String url, int placeHolderDrawable, Drawable errorDrawable) {
         mImageUrl = url;
-        Glide.with(getContext())
+        Picasso.get()
                 .load(url)
                 .placeholder(placeHolderDrawable)
-                .error(errorDrawable)
-                .into(this);
-    }
-
-    public void setImageUrl(String url, final ProgressBar progressBar) {
-        mImageUrl = url;
-        progressBar.setVisibility(VISIBLE);
-        Glide.with(getContext())
-                .load(url)
-                .listener(new RequestListener<String, GlideDrawable>() {
-                    @Override
-                    public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
-                        progressBar.setVisibility(GONE);
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
-                        progressBar.setVisibility(GONE);
-                        return false;
-                    }
-                })
-                .into(this);
-    }
-
-    public void setImageUrl(String url, final ProgressBar progressBar, int errorResourceId) {
-        mImageUrl = url;
-        progressBar.setVisibility(VISIBLE);
-        Glide.with(getContext())
-                .load(url)
-                .listener(new RequestListener<String, GlideDrawable>() {
-                    @Override
-                    public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
-                        progressBar.setVisibility(GONE);
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
-                        progressBar.setVisibility(GONE);
-                        return false;
-                    }
-                })
-                .error(errorResourceId)
-                .into(this);
-    }
-
-    public void setImageUrl(String url, final ProgressBar progressBar, Drawable errorDrawable) {
-        mImageUrl = url;
-        progressBar.setVisibility(VISIBLE);
-        Glide.with(getContext())
-                .load(url)
-                .listener(new RequestListener<String, GlideDrawable>() {
-                    @Override
-                    public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
-                        progressBar.setVisibility(GONE);
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
-                        progressBar.setVisibility(GONE);
-                        return false;
-                    }
-                })
                 .error(errorDrawable)
                 .into(this);
     }
@@ -131,7 +62,7 @@ public class BaseImageView extends ImageView {
 
     public void setImageUrl(String url) {
         mImageUrl = url;
-        Glide.with(getContext())
+        Picasso.get()
                 .load(url)
                 .into(this);
     }

@@ -16,6 +16,7 @@ import android.widget.Toast;
 import net.derohimat.baseapp.ui.BaseActivity;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import timber.log.Timber;
 
 /**
@@ -31,6 +32,7 @@ public abstract class BaseFragment<Data extends Parcelable> extends Fragment {
     protected Context mContext;
     protected Data mData;
     protected LayoutInflater mInflater;
+    private Unbinder unbinder;
 
     public BaseFragment() {
 
@@ -48,7 +50,7 @@ public abstract class BaseFragment<Data extends Parcelable> extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = mInflater.inflate(getResourceLayout(), container, false);
-        ButterKnife.bind(this, view);
+        unbinder=  ButterKnife.bind(this, view);
         return view;
     }
 
@@ -82,7 +84,7 @@ public abstract class BaseFragment<Data extends Parcelable> extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     @Override

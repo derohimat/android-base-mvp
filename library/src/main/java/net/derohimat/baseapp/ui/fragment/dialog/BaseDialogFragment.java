@@ -14,6 +14,7 @@ import android.widget.Toast;
 import net.derohimat.baseapp.ui.BaseActivity;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import timber.log.Timber;
 
 /**
@@ -28,6 +29,7 @@ public abstract class BaseDialogFragment extends DialogFragment {
 
     protected Context mContext;
     protected LayoutInflater mInflater;
+    private Unbinder unbinder;
 
     @Override
     public void onAttach(Activity activity) {
@@ -39,7 +41,7 @@ public abstract class BaseDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         View view = mInflater.inflate(getResourceLayout(), null);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
         Timber.tag(getClass().getSimpleName());
         return setupDialog(view);
     }
@@ -65,6 +67,6 @@ public abstract class BaseDialogFragment extends DialogFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 }
