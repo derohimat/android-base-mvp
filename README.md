@@ -1,5 +1,7 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Base%20MVP%20Concept-blue.svg?style=flat)](https://android-arsenal.com/details/1/4213)
 
+[ ![Download](https://api.bintray.com/packages/derohimat/BaseApp/android-base-mvp/images/download.svg?version=2.0.1) ](https://bintray.com/derohimat/BaseApp/android-base-mvp/2.0.1/link)
+
 # Android Base MVP Concept
 
 ### Architecture
@@ -7,9 +9,9 @@
 
 ### Requirements :
 	Min SDK Version 15
-	Target SDK Version 25
+	Target SDK Version 27
 	Check the compileSdkVersion, and buildToolsVersion to be the latest
-	Build Tools Version 25.0.2
+	Build Tools Version 27.0.3
 	Java 1.8
 
 ### Step by step
